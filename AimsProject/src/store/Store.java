@@ -1,10 +1,12 @@
+package store;
+import disc.DVD;
 
 public class Store {
 	public static final int MAX_NUMBER_ORDERED = 100;
 	private DVD itemsInStore[] = new DVD[MAX_NUMBER_ORDERED];
 	private int qtyInStore = 0;
 
-	void addDVD(DVD disc) 
+	public void addDVD(DVD disc) 
 	{
 		if(this.qtyInStore == 100)
 		{
@@ -17,7 +19,7 @@ public class Store {
 	}
 	
 
-	void removeDVD(DVD disc) {
+	public void removeDVD(DVD disc) {
 		if(this.qtyInStore == 0)
 		{
 			System.out.println("Nothing in store");

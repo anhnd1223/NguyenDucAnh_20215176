@@ -1,3 +1,5 @@
+package disc;
+
 
 public class DVD {
 	private static int nbDVD = 0;
@@ -67,11 +69,11 @@ public class DVD {
 	}
 	
 	//other
-	boolean isMatch(String title) {
+	public boolean isMatch(String title) {
 		if(this.title.indexOf(title) != -1) return true;
 		return false;
 	}
-	void printSelf() {
+	public void printSelf() {
 		System.out.printf("%d. %s - %s - %s - %d: %.2f $\n",
 				getId(),getTitle(),getCategory(),getDirector(),getLength(),getCost());
 	}

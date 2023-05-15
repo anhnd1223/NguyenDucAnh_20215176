@@ -1,10 +1,12 @@
+package cart;
+import disc.DVD;
 
 public class Cart {
 	public static final int MAX_NUMBER_ORDERED = 20;
 	private DVD itemsOrdered[] = new DVD[MAX_NUMBER_ORDERED];
 	int qtyOrdered = 0;
 	
-	void addDVD(DVD disc) 
+	public void addDVD(DVD disc) 
 	{
 		if(this.qtyOrdered == 20)
 		{
@@ -16,13 +18,13 @@ public class Cart {
 		System.out.println("Added item.");
 	}
 	
-	void addDVD(DVD[] dvdList)
+	public void addDVD(DVD[] dvdList)
 	{
 		for(int i=0;i < dvdList.length;i++)
 			addDVD(dvdList[i]);
 	}
 
-	void addDVD(DVD dvd1, DVD dvd2)
+	public void addDVD(DVD dvd1, DVD dvd2)
 	{
 		addDVD(dvd1);
 		addDVD(dvd2);
@@ -35,7 +37,7 @@ public class Cart {
 //			addDVD(dvds[i]);
 //	}
 	
-	void removeDVD(DVD disc) {
+	public void removeDVD(DVD disc) {
 		if(this.qtyOrdered == 0)
 		{
 			System.out.println("Nothing in cart");
@@ -57,7 +59,7 @@ public class Cart {
 		qtyOrdered --;
 	}
 	
-	void printCart() {
+	public void printCart() {
 		System.out.println("*****************CART*****************");
 		for(int i=0;i<this.qtyOrdered;i++)
 		{
@@ -67,7 +69,7 @@ public class Cart {
 		System.out.println("**************************************");
 	}
 	
-	void searchCart(int ID) {
+	public void searchCart(int ID) {
 		if(ID > this.qtyOrdered || ID <= 0)
 		{
 			System.out.println("There's no item with that ID");
@@ -77,7 +79,7 @@ public class Cart {
 		temp.printSelf();
 	}
 	
-	void searchCart(String title) {
+	public void searchCart(String title) {
 		int found = 0;
 		for(int i=0;i<this.qtyOrdered;i++)
 		{
@@ -92,7 +94,7 @@ public class Cart {
 			System.out.println("There's no item with that title");
 	}
 	
-	float totalCost() {
+	public float totalCost() {
 		float j=0;
 		for(int i=0;i<this.qtyOrdered;i++)
 			j += this.itemsOrdered[i].getCost();

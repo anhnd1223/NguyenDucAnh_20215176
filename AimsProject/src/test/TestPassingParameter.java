@@ -1,3 +1,5 @@
+package test;
+import disc.DVD;
 
 public class TestPassingParameter {
 

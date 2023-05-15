@@ -1,3 +1,6 @@
+package test;
+import disc.DVD;
+import store.Store;
 
 public class StoreTest {
 
