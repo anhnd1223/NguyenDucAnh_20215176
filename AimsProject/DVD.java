@@ -34,7 +34,6 @@ public class DVD {
 	
 	//constructor
 	public DVD(String title, String category, String director, int length, float cost) {
-		super();
 		this.title = title;
 		this.category = category;
 		this.director = director;
@@ -46,12 +45,16 @@ public class DVD {
 	public DVD(String title) {
 		super();
 		this.title = title;
+		nbDVD++;
+	    this.id = nbDVD;
 	}
 	public DVD(String title, String category, float cost) {
 		super();
 		this.title = title;
 		this.category = category;
 		this.cost = cost;
+		nbDVD++;
+	    this.id = nbDVD;
 	}
 	public DVD(String title, String category, String director, float cost) {
 		super();
@@ -59,5 +62,7 @@ public class DVD {
 		this.category = category;
 		this.director = director;
 		this.cost = cost;
+		nbDVD++;
+	    this.id = nbDVD;
 	}
 }
