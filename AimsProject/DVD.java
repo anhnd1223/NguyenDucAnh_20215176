@@ -1,5 +1,7 @@
 
 public class DVD {
+	private static int nbDVD = 0;
+	private int id;
 	private String title;
 	private String category;
 	private String director;
@@ -21,7 +23,9 @@ public class DVD {
 	public float getCost() {
 		return cost;
 	}
-	
+	public int getId() {
+		return id;
+	}
 	//setters
 	public void setTitle(String title) {
 		this.title = title;
@@ -36,6 +40,8 @@ public class DVD {
 		this.director = director;
 		this.length = length;
 		this.cost = cost;
+		nbDVD++;
+	    this.id = nbDVD;
 	}
 	public DVD(String title) {
 		super();
