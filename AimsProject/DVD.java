@@ -22,6 +22,12 @@ public class DVD {
 		return cost;
 	}
 	
+	//setters
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	
+	
 	//constructor
 	public DVD(String title, String category, String director, int length, float cost) {
 		super();
