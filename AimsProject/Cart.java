@@ -62,10 +62,34 @@ public class Cart {
 		for(int i=0;i<this.qtyOrdered;i++)
 		{
 			DVD temp = this.itemsOrdered[i];
-			System.out.printf("%d. %s - %s - %s - %d: %.2f $\n",
-					temp.getId(),temp.getTitle(),temp.getCategory(),temp.getDirector(),temp.getLength(),temp.getCost());
+			temp.printSelf();
 		}
 		System.out.println("**************************************");
+	}
+	
+	void searchCart(int ID) {
+		if(ID > this.qtyOrdered || ID <= 0)
+		{
+			System.out.println("There's no item with that ID");
+			return;
+		}
+		DVD temp = this.itemsOrdered[ID-1];
+		temp.printSelf();
+	}
+	
+	void searchCart(String title) {
+		int found = 0;
+		for(int i=0;i<this.qtyOrdered;i++)
+		{
+			DVD temp = this.itemsOrdered[i];
+			if(temp.isMatch(title))
+				{
+					temp.printSelf();
+					found = 1;
+				}
+		}
+		if(found == 0)
+			System.out.println("There's no item with that title");
 	}
 	
 	float totalCost() {

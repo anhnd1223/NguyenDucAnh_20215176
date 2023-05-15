@@ -13,7 +13,13 @@ public class Aims {
 		//System.out.println("Total cost is: "); 	
 		//System.out.println(anOrder.totalCost()); 	
 		
-		anOrder.printCart();
+		anOrder.printCart(); 
+			System.out.println();
+		anOrder.searchCart(0);
+		anOrder.searchCart(3);
+			System.out.println();
+		anOrder.searchCart("Aladdumb");
+		anOrder.searchCart("tar");
 		
 		//anOrder.removeDVD(dvd3);
 		//System.out.println("Total cost is: "); 	

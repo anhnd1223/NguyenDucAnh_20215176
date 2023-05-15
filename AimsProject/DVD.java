@@ -65,4 +65,14 @@ public class DVD {
 		nbDVD++;
 	    this.id = nbDVD;
 	}
+	
+	//other
+	boolean isMatch(String title) {
+		if(this.title.indexOf(title) != -1) return true;
+		return false;
+	}
+	void printSelf() {
+		System.out.printf("%d. %s - %s - %s - %d: %.2f $\n",
+				getId(),getTitle(),getCategory(),getDirector(),getLength(),getCost());
+	}
 }
