@@ -57,6 +57,17 @@ public class Cart {
 		qtyOrdered --;
 	}
 	
+	void printCart() {
+		System.out.println("*****************CART*****************");
+		for(int i=0;i<this.qtyOrdered;i++)
+		{
+			DVD temp = this.itemsOrdered[i];
+			System.out.printf("%d. %s - %s - %s - %d: %.2f $\n",
+					temp.getId(),temp.getTitle(),temp.getCategory(),temp.getDirector(),temp.getLength(),temp.getCost());
+		}
+		System.out.println("**************************************");
+	}
+	
 	float totalCost() {
 		float j=0;
 		for(int i=0;i<this.qtyOrdered;i++)
