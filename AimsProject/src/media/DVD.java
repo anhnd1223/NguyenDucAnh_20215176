@@ -1,53 +1,31 @@
 package media;
 
 
-public class DVD extends Media {
+public class DVD extends Disc {
 	private static int nbDVD = 0;
-	private String director;
-	private int length;
-	public String getDirector() {
-		return director;
-	}
-	public int getLength() {
-		return length;
-	}
+	
 	//constructor
-	public DVD(String title, String category, String director, int length, float cost) {
-		this.title = title;
-		this.category = category;
-		this.director = director;
-		this.length = length;
-		this.cost = cost;
+	public DVD(String title, String category, float cost, int length, String director) {
+		super(nbDVD+1, title, category, cost, length, director);
 		nbDVD++;
-	    this.id = nbDVD;
 	}
+	
 	public DVD(String title) {
-		super();
-		this.title = title;
+		super(nbDVD+1, title);
 		nbDVD++;
-	    this.id = nbDVD;
 	}
 	public DVD(String title, String category, float cost) {
-		super();
-		this.title = title;
-		this.category = category;
-		this.cost = cost;
+		super(nbDVD+1, title, category, cost);
 		nbDVD++;
-	    this.id = nbDVD;
 	}
 	public DVD(String title, String category, String director, float cost) {
-		super();
-		this.title = title;
-		this.category = category;
-		this.director = director;
-		this.cost = cost;
+		super(nbDVD+1, title, category, cost, director);
 		nbDVD++;
-	    this.id = nbDVD;
 	}
 	
 	//other
 	public boolean isMatch(String title) {
-		if(this.title.indexOf(title) != -1) return true;
+		if(this.getTitle().indexOf(title) != -1) return true;
 		return false;
 	}
 	public void printSelf() {
