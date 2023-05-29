@@ -2,7 +2,7 @@ package media;
 
 import java.util.ArrayList;
 
-public class CD extends Disc {
+public class CD extends Disc implements Playable{
 
 	private String artist;
 	private ArrayList<Track> tracks = new ArrayList<Track>();
@@ -14,7 +14,8 @@ public class CD extends Disc {
 	public CD(int id, String title) {
 		super(id, title);
 	}
-
+ 
+	
 	public void addTrack(Track inputTrack) {
 		for(int i=0;i<tracks.size();i++)
 		{
@@ -46,5 +47,14 @@ public class CD extends Disc {
 			sol+=tracks.get(i).getLength();
 		}
 		return sol;
+	}
+	public void play() {
+		System.out.println("Playing CD: " + this.getTitle());
+		System.out.println("Of artist: " + this.getArtist());
+		System.out.println("CD length: " + this.getLength());
+		for(int i=0;i<tracks.size();i++)
+		{
+			tracks.get(i).play();
+		}
 	}
 }

@@ -30,13 +30,6 @@ public class Cart {
 		addDVD(dvd2);
 	}
 	
-//  A method with arbitrary number of arguments
-//	void addDVD(DVD...dvds)
-//	{
-//		for(int i=0;i < dvds.length;i++)
-//			addDVD(dvds[i]);
-//	}
-	
 	public void removeDVD(DVD disc) {
 		if(this.qtyOrdered == 0)
 		{

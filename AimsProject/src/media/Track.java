@@ -1,6 +1,6 @@
 package media;
 
-public class Track {
+public class Track implements Playable {
 
 	private String title;
 	private int length;
@@ -14,5 +14,10 @@ public class Track {
 	
 	public Track() {
 	}
+	 
 
+	public void play() {
+		System.out.println("Playing track: " + this.getTitle());
+		System.out.println("Track length: " + this.getLength());
+	}
 }

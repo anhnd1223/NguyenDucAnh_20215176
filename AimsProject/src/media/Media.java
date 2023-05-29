@@ -1,5 +1,9 @@
 package media;
 
+interface Playable{
+	public void play();
+}
+
 public abstract class Media {
 	
 	private int id;
