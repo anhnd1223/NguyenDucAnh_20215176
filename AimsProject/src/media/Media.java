@@ -1,6 +1,12 @@
 package media;
+import java.util.*;
+
+import comparator.*;
 
 public abstract class Media {
+
+	public static final Comparator<Media> COMPARE_TITLE_COST = new MediaSortTitleCost();
+	public static final Comparator<Media> COMPARE_COST_TITLE = new MediaSortCostTitle();
 	
 	private int id;
 	private String title;
