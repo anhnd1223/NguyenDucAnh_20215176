@@ -14,8 +14,12 @@ public class CD extends Disc implements Playable{
 	public CD(int id, String title) {
 		super(id, title);
 	}
- 
-	
+
+	public CD(int id, String title, String category, float cost) {
+		super(id, title, category, cost);
+		// TODO Auto-generated constructor stub
+	}
+
 	public void addTrack(Track inputTrack) {
 		for(int i=0;i<tracks.size();i++)
 		{

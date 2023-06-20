@@ -5,11 +5,17 @@ public class Book extends Media {
 	
 	private ArrayList<String> authors = new ArrayList<String>();
 	
-
+	//constructor
 	public Book(int id, String title) {
 		super(id, title);
 	}
-	
+	public Book(int id, String title, String category, float cost) {
+		super(id, title, category, cost);
+		// TODO Auto-generated constructor stub
+	}
+
+
+	//other
 	public void addAuthor(String inputAuthor) {
 		for(int i=0;i<authors.size();i++)
 		{

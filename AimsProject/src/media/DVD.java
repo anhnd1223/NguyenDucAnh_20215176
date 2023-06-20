@@ -9,7 +9,6 @@ public class DVD extends Disc implements Playable {
 		super(nbDVD+1, title, category, cost, length, director);
 		nbDVD++;
 	}
-	
 	public DVD(String title) {
 		super(nbDVD+1, title);
 		nbDVD++;
@@ -21,6 +20,10 @@ public class DVD extends Disc implements Playable {
 	public DVD(String title, String category, String director, float cost) {
 		super(nbDVD+1, title, category, cost, director);
 		nbDVD++;
+	}
+	public DVD(int id, String title, String category, float cost) {
+		super(id, title, category, cost);
+		// TODO Auto-generated constructor stub
 	}
 	
 	//other

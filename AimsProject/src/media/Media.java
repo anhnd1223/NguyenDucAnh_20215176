@@ -40,7 +40,10 @@ public abstract class Media {
 		this.category = category;
 		this.cost = cost;
 	}
-	
+	 
+	public void printSelf() {
+		System.out.println(this.id + "-" + this.title + "-" + this.category + "-" + this.cost);
+	}
 	public boolean equals(Object obj) {
 		if(obj instanceof Media)
 			if(((Media)obj).getTitle() == this.getTitle())
