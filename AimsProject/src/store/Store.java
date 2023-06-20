@@ -1,43 +1,42 @@
 package store;
-import media.DVD;
+import java.util.ArrayList;
+import media.Media;
 
 public class Store {
-	public static final int MAX_NUMBER_ORDERED = 100;
-	private DVD itemsInStore[] = new DVD[MAX_NUMBER_ORDERED];
-	private int qtyInStore = 0;
-
-	public void addDVD(DVD disc) 
-	{
-		if(this.qtyInStore == 100)
-		{
-			System.out.println("Store full");
-			return;
-		}
-		this.itemsInStore[qtyInStore] = disc;
-		qtyInStore ++;
-		System.out.println("Added item.");
-	}
+	private ArrayList<Media> itemsOrdered = new ArrayList<Media>();
 	
 
-	public void removeDVD(DVD disc) {
-		if(this.qtyInStore == 0)
+	public void addMedia(Media inputMedia) {
+		for(int i=0;i<itemsOrdered.size();i++)
 		{
-			System.out.println("Nothing in store");
-			return;
-		}
-		DVD temp[] = new DVD[qtyInStore - 1];
-		int i=0;int j=0;
-		for(i=0;i<this.qtyInStore;i++)
-			if(this.itemsInStore[i] == disc)
-				;
-			else
+			if(itemsOrdered.get(i) == inputMedia)
 			{
-				temp[j] = this.itemsInStore[i];
-				j++;
+				System.out.println("Media already in!");
+				return;
 			}
-		this.itemsInStore = temp;
-		System.out.println("Removed item.");
-
-		qtyInStore --;
+		}
+		itemsOrdered.add(inputMedia);
 	}
+	
+	public void removeMedia(Media inputMedia) {
+		int sol = 0;
+		for(int i=0;i<itemsOrdered.size();i++)
+		{
+			if(itemsOrdered.get(i) == inputMedia)
+			{
+				itemsOrdered.remove(i);
+				sol = 1;
+			}
+		}
+		if(sol == 0)
+			System.out.println("Media not in!");
+	}
+
+	public ArrayList<Media> getItemsInStore() {
+		return itemsOrdered;
+	}
+	
+	
+	
+	
 }

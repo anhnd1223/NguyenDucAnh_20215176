@@ -4,7 +4,6 @@ import media.Media;
 import java.util.ArrayList;
 
 public class Cart {
-	public static final int MAX_NUMBER_ORDERED = 20;
 	private ArrayList<Media> itemsOrdered = new ArrayList<Media>();
 	
 
@@ -32,8 +31,13 @@ public class Cart {
 		if(sol == 0)
 			System.out.println("Media not in!");
 	}
+	
+	public void printSelf() {
+		for(Media m:itemsOrdered)
+			m.printSelf();
+	}
 	public void totalCost() {
-		int sol = 0;
+		float sol = 0;
 		for(int i=0;i<itemsOrdered.size();i++)
 		{
 			sol+=itemsOrdered.get(i).getCost();
