@@ -1,10 +1,10 @@
 package cart;
 import media.Media;
+import javafx.collections.*;
 
-import java.util.ArrayList;
 
 public class Cart {
-	private ArrayList<Media> itemsOrdered = new ArrayList<Media>();
+	private ObservableList<Media> itemsOrdered = FXCollections.observableArrayList();
 	
 
 	public void addMedia(Media inputMedia) {
@@ -36,6 +36,11 @@ public class Cart {
 		for(Media m:itemsOrdered)
 			m.printSelf();
 	}
+	
+	public ObservableList<Media> getItemsOrdered() {
+		return itemsOrdered;
+	}
+	
 	public void totalCost() {
 		float sol = 0;
 		for(int i=0;i<itemsOrdered.size();i++)
